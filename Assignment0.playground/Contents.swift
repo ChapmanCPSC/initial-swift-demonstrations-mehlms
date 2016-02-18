@@ -35,3 +35,28 @@ sumVariadic.dynamicType
 // TUPLES
 let tup = ("First bit", "Second Bit")
 print (tup.0, tup.1)
+
+// COMPUTED INITIALIZERS
+let someConstant = 4
+var isEven : Bool = {
+    if someConstant % 2 == 0 {
+        return true
+    } else {
+        return false
+    }
+}()
+
+//Setter Observers
+class Person {
+    var name : String = "" {
+        willSet{
+            print ("About to set person name to \(newValue)")
+        }
+        didSet {
+            print ("Just changed person name from \(oldValue) to \(self.name)")
+        }
+    }
+}
+
+var p = Person()
+p.name = "Ryan Burnzzzzzz"
